@@ -14,5 +14,3 @@ Connect an application to Cloud SQL using Private IP address
 
 
 
-
-
