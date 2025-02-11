@@ -12,6 +12,7 @@ Connect an application to Cloud SQL using Private IP address
 
 ![image](https://github.com/user-attachments/assets/8138609d-2134-49b3-818e-fa0fa9a1242a)
 
+==============================================================================
 
 #!/bin/bash
 # Always a good idea to update things
@@ -29,6 +30,7 @@ rm index.html
 chgrp www-data .
 chmod g+w .
 
+==============================================================
 
 
 
