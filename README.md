@@ -13,7 +13,8 @@ Connect an application to Cloud SQL using Private IP address
 ![image](https://github.com/user-attachments/assets/8138609d-2134-49b3-818e-fa0fa9a1242a)
 
 ==============================================================================
-
+NOTE: Create two server wordpress-proxy and wordpress-private-ip  and run below starup script to isntall dependenices 
+==================================================================================
 #!/bin/bash
 # Always a good idea to update things
 apt-get update -y
@@ -31,30 +32,6 @@ chgrp www-data .
 chmod g+w .
 
 ==============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Since this lab setup includes pre-configured VMs and a temporary project in Qwiklabs, you'll need to manually set up everything on your GCP free-tier account. Below is a step-by-step guide for setting up Cloud SQL and connecting it via both external proxy and Private IP.
-
----
 
 ### **Step 1: Enable Required APIs**
 Go to **Google Cloud Console** and enable the following APIs:
@@ -249,41 +226,6 @@ This setup replicates the Qwiklabs environment but works on your **own free-tier
 
 
 ========================================
-To clarify this concept for your students, you can use a simple analogy and a practical demonstration.
-
----
-
-### **1. Analogy: Cloud SQL vs. Compute Engine**
-Tell them to imagine:
-
-- **Compute Engine VM** = A personal laptop where they install, configure, and maintain everything themselves.
-- **Cloud SQL** = A managed database service like Google Drive, where Google handles the backend (storage, security, and uptime), and they just use it.
-
-Ask:  
-*"When you save a file on Google Drive, do you see the actual server that stores it?"*  
-(Answer: No, but it exists in Google's infrastructure.)  
-*"Similarly, when you create a Cloud SQL instance, do you see its VM?"*  
-(Answer: No, but Google runs it in the background.)
-
----
-
-### **2. Practical Demonstration (Hands-On)**
-1. **Create a Cloud SQL Instance**  
-   - Go to **Google Cloud Console** → **SQL** → **Create Instance**  
-   - Choose **MySQL/PostgreSQL** → Configure it  
-   - Click **Create**
-
-2. **Check Compute Engine VM List**  
-   - Go to **Compute Engine** → **VM Instances**  
-   - Ask them to find the Cloud SQL instance there  
-   - They won't find it!
-
-3. **Explain Why**
-   - Google **manages Cloud SQL separately** (under the SQL service).
-   - The database runs on **Google-managed infrastructure** but **doesn’t appear as a VM** in Compute Engine.
-
----
-
 ### **3. Bonus: What If You Want a VM with a Database?**
 If they want full control (like running MySQL on a Compute Engine VM), they can:
 - Create a **Compute Engine VM**
@@ -357,10 +299,5 @@ Both **Cloud Run** and **App Engine** can connect to **Cloud SQL** using:
 
 ---
 
-### **5. How to Explain to Students**
-- If they know **Docker**, tell them to use **Cloud Run**.  
-- If they want **simple deployment without containers**, tell them to use **App Engine**.  
-- Use **Cloud Run for APIs** and **App Engine for full web apps**.  
 
-Would you like a step-by-step lab to help them practice? 😊
 
