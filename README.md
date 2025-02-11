@@ -13,6 +13,41 @@ Connect an application to Cloud SQL using Private IP address
 ![image](https://github.com/user-attachments/assets/8138609d-2134-49b3-818e-fa0fa9a1242a)
 
 
+#!/bin/bash
+# Always a good idea to update things
+apt-get update -y
+# Install the Apache2 server, PHP, and MySQL client.  The rest of the install are modules for WordPress.
+apt-get -y install apache2 php libapache2-mod-php php-common php-mysql php-gmp php-curl php-intl php-mbstring php-xmlrpc php-gd php-xml php-cli php-zip default-mysql-client wget
+# Download, unpack and move, the latest WordPress release.
+wget https://wordpress.org/latest.tar.gz
+tar -zxf latest.tar.gz
+cd wordpress
+cp -r . /var/www/html
+cd /var/www/html
+rm index.html
+# Allow apache2 to change the wp-config.php file
+chgrp www-data .
+chmod g+w .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Since this lab setup includes pre-configured VMs and a temporary project in Qwiklabs, you'll need to manually set up everything on your GCP free-tier account. Below is a step-by-step guide for setting up Cloud SQL and connecting it via both external proxy and Private IP.
